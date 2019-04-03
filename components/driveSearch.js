@@ -43,6 +43,7 @@ export default class DriveSearch extends React.Component {
       <View style={styles.container}>
       <StatusBar barStyle="light-content"  />
       <Text style={styles.title}>카풀정보조회</Text>
+      
       <View style={styles.inputbox}>
         <TextInput
           style={styles.input}
@@ -53,7 +54,6 @@ export default class DriveSearch extends React.Component {
         <TouchableOpacity onPress={this._searchHandling}>
            <View style={styles.circle} />
          </TouchableOpacity>
-
       </View>
       <View style={styles.conditionview}>
         <Conditions />
