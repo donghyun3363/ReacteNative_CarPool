@@ -1,6 +1,6 @@
 import React from 'react';
 import debug from 'debug'
-import {  View, Text, TouchableOpacity, StyleSheet, TextInput, Dimensions, Platform, AsyncStorage, StatusBar   } from 'react-native';
+import {  Platform,  View, Text, TouchableOpacity, StyleSheet, TextInput, Dimensions, Platform, AsyncStorage, StatusBar   } from 'react-native';
 import {  Button  } from "react-native-elements";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
   const {height, width } = Dimensions.get("window");
   const log = debug('app:component:Header');
 
+  type Props = {};
   export default class Login extends React.Component {
 
     constructor(props) {
@@ -19,8 +20,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
     render() {
         return (
         <View style={styles.container}>
-            <StatusBar barStyle="light-content"  />
             <View style={styles.default}>
+                <Text style={styles.title}>카풀정보조회</Text>
+                <Text style={styles.title}>카풀정보조회</Text>
                 <Text style={styles.title}>카풀정보조회</Text>
             </View>
         </View>
@@ -33,24 +35,25 @@ import Icon from 'react-native-vector-icons/FontAwesome';
    
     container: {
         flex: 1,
-        backgroundColor: "#0067FF",
-        alignItems: "center"
+        backgroundColor: "red",
       },
       title: {
-        color: "white",
-        fontSize: 30,
-        margin: 50,
-        fontWeight: "200",
-        marginBottom: 30
+        padding: 20,
+        margin: 0,
+        marginHorizontal: 10,
+        backgroundColor:"#ef4c",
+        width: 125,
+        height: 125,
+        borderWidth: 1,
+        borderColor:"red",
+        textAlign:"center",
       },
       default: {
         backgroundColor: '#000000',
       },
-    // upperBar: {
-    //     flex: 1,
-    //     flexDirection: 'row',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     backgroundColor: '#000000',
-    // }
+});
+
+const instructions = Platform.select({
+  ios: "ios",
+  android: "android",
 });
